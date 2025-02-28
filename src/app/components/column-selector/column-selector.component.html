@@ -1,0 +1,26 @@
+<div class="column-selector-container flex flex-col md:flex-row gap-4 md:gap-6 p-4">
+  <div class="column-list w-full md:w-1/2 bg-base-200 rounded-lg p-4 shadow-md">
+    <h3 class="text-lg font-bold mb-4">Columnas disponibles</h3>
+    <ul class="space-y-2">
+      <li *ngFor="let columna of columnasDisponibles" class="flex justify-between items-center">
+        <span>{{ columna }}</span>
+        <button class="btn btn-sm btn-outline btn-success"
+          (click)="moverColumna(columna, 'disponibles', 'seleccionadas')">
+          >>
+        </button>
+      </li>
+    </ul>
+  </div>
+
+  <div class="column-list w-full md:w-1/2 bg-base-200 rounded-lg p-4 shadow-md">
+    <h3 class="text-lg font-bold mb-4">Columnas a procesar</h3>
+    <ul class="space-y-2">
+      <li *ngFor="let columna of columnasSeleccionadas" class="flex justify-between items-center">
+        <span>{{ columna }}</span>
+        <button class="btn btn-sm btn-outline btn-error"
+          (click)="moverColumna(columna, 'seleccionadas', 'disponibles')">
+          << </button>
+      </li>
+    </ul>
+  </div>
+</div>
